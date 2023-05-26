@@ -21,7 +21,27 @@ module.exports = {
       title: 'About Page',
       chunks: ['chunk-vendors', 'chunk-common', 'about']
     },
-    
+    applePie: {
+      entry: 'src/applePie.js',
+      template: 'public/applePie.html',
+      filename: 'applePie.html',
+      title: 'Apple Pie',
+      chunks: ['chunk-vendors', 'chunk-common', 'apple-pie']
+    },
+    chickenAlfredo: {
+      entry: 'src/chickenAlfredo.js',
+      template: 'public/chickenAlfredo.html',
+      filename: 'chickenAlfredo.html',
+      title: 'Chicken Alfredo',
+      chunks: ['chunk-vendors', 'chunk-common', 'chicken-alfredo']
+    },
+    chickenNoodleSoup: {
+      entry: 'src/chickenNoodle.js',
+      template: 'public/chickenNoodle.html',
+      filename: 'chikenNoodle.html',
+      title: 'Chicken Noodle Soup',
+      chunks: ['chunk-vendors', 'chunk-common', 'chicken-noodle']
+    },
   }
 };
 

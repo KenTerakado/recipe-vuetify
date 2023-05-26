@@ -1,4 +1,4 @@
-<template fluid>
+<template>
   <v-card>
       <v-row>
           <v-col>
@@ -12,11 +12,11 @@
       </v-row>
       <v-spacer></v-spacer>
       <v-row>
-          <div>
-              <router-link to="/Apple Pie">
+          <!--div>
+              <router-link to="/applePie">
                   <v-img src="../assets/logo-black.png" @click="navigateToAnotherPage"></v-img>
               </router-link>
-          </div>
+          </div-->
       </v-row>
   </v-card>
 </template>

@@ -6,17 +6,17 @@
         light
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-          <div class="d-flex align-center">
-            <v-img
-                alt="cook-logo"
-                class="shrink mr-2"
-                contain
-                src="assets/cook-logo.png"
-                transition="scale-transition"
-                width="40"
-            ></v-img>
-              </div>
-              <v-spacer></v-spacer>  
+        <div class="d-flex align-center">
+          <v-img
+            alt="cook-logo"
+            class="shrink mr-2"
+            contain
+            src="assets/cook-logo.png"
+            transition="scale-transition"
+            width="40"
+          ></v-img>
+        </div>
+        <v-spacer></v-spacer>  
     </v-app-bar>
       <v-navigation-drawer
         v-model="drawer"
@@ -25,27 +25,32 @@
         temporary
       >
         <v-list
-            nav
-            dense
+          nav
+          dense
         >
           <v-list-item-group
             v-model="group"
             active-class="deep-purple--text text--accent-4"
-            >
-              <v-list-item link>
-                  <v-list-item-title>Home</v-list-item-title>
-              </v-list-item>
+          >
+            <v-list-item>
+                <RouterLink to="/">Home</RouterLink>
+            </v-list-item>
 
-              <v-list-item>
-                  <v-list-item-title>Apple Pie</v-list-item-title>
-              </v-list-item>
+            <v-list-item>
+              <RouterLink to="/applePie">Apple Pie</RouterLink>
+            </v-list-item>
 
-              <v-list-item>
-                  <v-list-item-title>Chicken Alfredo</v-list-item-title>
-              </v-list-item>
+            <v-list-item>
+              <RouterLink to="/chickenAlfredo">Chicken Alfredo</RouterLink>
+            </v-list-item>
+
+            <v-list-item>
+              <RouterLink to="/chickenNoodle">Chicken Noodle Soup</RouterLink>
+            </v-list-item>
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
+
     <v-main>
       <router-view/>
     </v-main>
@@ -53,11 +58,21 @@
 </template>
 
 <script>
-export default {
-  name: 'App',
+import { RouterLink } from 'vue-router';
 
-  data: () => ({
-    //
-  }),
+export default {
+    name: "App",
+    data: () => ({
+        drawer: false,
+        group: null,
+    }),
+    watch: {
+        group() {
+            this.drawer = false;
+        },
+    },
+    components: { RouterLink }
 };
+
+
 </script>
