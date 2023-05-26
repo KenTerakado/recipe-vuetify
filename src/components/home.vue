@@ -1,11 +1,11 @@
-<template>
+<template fluid>
   <v-card>
       <v-row>
           <v-col>
-              <v-container class="background">
-                  <v-img src="../assets/logo-black.png" alt="logo"></v-img>
+              <v-container class="background pa-0" fluid>
               </v-container>
           </v-col>
+          <v-img class="logo" src="../assets/logo-white.png" alt="logo"></v-img>
       </v-row>
       <v-row>
           <h2>Discover the deliciousness of Kembussin's bussin</h2>
@@ -21,6 +21,25 @@
   </v-card>
 </template>
 
+<style>
+.background {
+  background-image: url('../assets/background.jpg');
+  background-size: cover;
+  height: 500px;
+  width: 1500px;
+  margin-top: -55px;
+  filter: brightness(0.5);
+}
+
+.logo {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  margin-left: 600px;
+  margin-top: 80px;
+}
+</style>
+
 <script>
   export default {
     name: 'home-page',
@@ -30,50 +49,6 @@
         {
           text: 'vuetify-loader',
           href: 'https://github.com/vuetifyjs/vuetify-loader',
-        },
-        {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify',
-        },
-        {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify',
-        },
-      ],
-      importantLinks: [
-        {
-          text: 'Documentation',
-          href: 'https://vuetifyjs.com',
-        },
-        {
-          text: 'Chat',
-          href: 'https://community.vuetifyjs.com',
-        },
-        {
-          text: 'Made with Vuetify',
-          href: 'https://madewithvuejs.com/vuetify',
-        },
-        {
-          text: 'Twitter',
-          href: 'https://twitter.com/vuetifyjs',
-        },
-        {
-          text: 'Articles',
-          href: 'https://medium.com/vuetify',
-        },
-      ],
-      whatsNext: [
-        {
-          text: 'Explore components',
-          href: 'https://vuetifyjs.com/components/api-explorer',
-        },
-        {
-          text: 'Select a layout',
-          href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
-        },
-        {
-          text: 'Frequently Asked Questions',
-          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
         },
       ],
     }),
