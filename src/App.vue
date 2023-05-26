@@ -3,11 +3,9 @@
     <v-app-bar
         app
         color="white"
-        dark
-        prominent
+        light
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-toolbar-title>Menu</v-toolbar-title>
           <div class="d-flex align-center">
             <v-img
                 alt="cook-logo"
@@ -45,9 +43,9 @@
               <v-list-item>
                   <v-list-item-title>Chicken Alfredo</v-list-item-title>
               </v-list-item>
-                  </v-list-item-group>
-              </v-list>
-          </v-navigation-drawer>
+          </v-list-item-group>
+        </v-list>
+      </v-navigation-drawer>
     <v-main>
       <router-view/>
     </v-main>
@@ -55,7 +53,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
 
