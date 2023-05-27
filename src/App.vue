@@ -1,12 +1,11 @@
 <template>
   <v-app>
     <v-app-bar
-        app
-        color="white"
-        light
+      color='rgba(255, 255, 255, 0.8)'
+      app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <div class="d-flex align-center">
+        <!--div class="d-flex align-center">
           <v-img
             alt="cook-logo"
             class="shrink mr-2"
@@ -15,7 +14,7 @@
             transition="scale-transition"
             width="40"
           ></v-img>
-        </div>
+        </div-->
         <v-spacer></v-spacer>  
     </v-app-bar>
       <v-navigation-drawer
@@ -73,6 +72,4 @@ export default {
     },
     components: { RouterLink }
 };
-
-
 </script>
