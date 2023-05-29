@@ -9,12 +9,16 @@
       </v-row>
       <v-spacer></v-spacer>
       <v-card class="mt-7 px-5">
-        <v-card-title class="ml-6"><h1>Latest Recipes</h1></v-card-title>
+        <v-card-title class="ml-6 mb-4"><h1>Latest Recipes</h1></v-card-title>
         <v-row>
           <v-col col="3">
             <v-card>
               <v-card-title class="ml-6"><h3>Apple Pie</h3></v-card-title>
-              <v-container class="ml-6 mt-n2"><v-img class="icon" src="../assets/applePieIcon.jpeg"></v-img></v-container>
+              <v-container class="ml-6 mt-n2">
+                <RouterLink to="/applePie">
+                  <v-img class="icon" src="../assets/applePieIcon.jpeg"></v-img>
+                </RouterLink>
+              </v-container>
               <p class="mx-9 pb-6">
                 A American classic - one of the most iconic deserts across the world...
               </p>
@@ -23,7 +27,11 @@
           <v-col col="3">
             <v-card>
               <v-card-title class="ml-6"><h3>Chicken Alfredo</h3></v-card-title>
-              <v-container class="ml-6 mt-n2"><v-img class="icon" src="../assets/alfredoIcon.jpg"></v-img></v-container>
+              <v-container class="ml-6 mt-n2">
+                <RouterLink to="/chickenAlfredo">
+                  <v-img class="icon" src="../assets/alfredoIcon.jpg"></v-img>
+                </RouterLink>
+              </v-container>
               <p class="mx-9 pb-6">
                 A creamy and cheesy pasta dish that many consider to be their comfort...
               </p>
@@ -32,7 +40,11 @@
           <v-col col="3">
             <v-card>
               <v-card-title class="ml-6"><h3>Chicken Noodle Soup</h3></v-card-title>
-              <v-container class="ml-6 mt-n2"><v-img class="icon" src="../assets/chickenNoodleIcon.jpeg"></v-img></v-container>
+              <v-container class="ml-6 mt-n2">
+                <RouterLink to="/chickenNoodle">
+                  <v-img class="icon" src="../assets/chickenNoodleIcon.jpeg"></v-img>
+                </RouterLink>
+                </v-container>
               <p class="mx-9 pb-6">
                 Perfect for light meals or on a rainy day - chicken noodle soup is an ...
               </p>
@@ -87,16 +99,18 @@
 </style>
 
 <script>
-  export default {
-    name: 'home-page',
+import { RouterLink } from 'vue-router';
 
+  export default {
+    name: "home-page",
     data: () => ({
-      ecosystem: [
-        {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader',
-        },
-      ],
+        ecosystem: [
+            {
+                text: "vuetify-loader",
+                href: "https://github.com/vuetifyjs/vuetify-loader",
+            },
+        ],
     }),
-  }
+    components: { RouterLink }
+}
 </script>
