@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar
-      color='rgba(255, 255, 255, 0.8)'
+      color='rgba(220, 220, 220, 0.8)'
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
