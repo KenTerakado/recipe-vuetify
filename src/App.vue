@@ -1,38 +1,36 @@
 <template>
   <v-app>
     <v-app-bar
-      color='rgba(220, 220, 220, 0.8)'
+      color="rgba(220, 220, 220, 0.8)"
       app
+      fixed
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <!--div class="d-flex align-center">
-          <v-img
-            alt="cook-logo"
-            class="shrink mr-2"
-            contain
-            src="assets/cook-logo.png"
-            transition="scale-transition"
-            width="40"
-          ></v-img>
-        </div-->
-        <v-spacer></v-spacer>  
+      <v-spacer></v-spacer>
     </v-app-bar>
-      <v-navigation-drawer
-        v-model="drawer"
-        absolute
-        bottom
-        temporary
+
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      temporary
+      class="menu-drawer"
+    >
+      <v-card
+        class="menu-card px-0 mx-0"
+        tile
       >
         <v-list
           nav
           dense
+          class="list pa-0 ma-0"
         >
           <v-list-item-group
             v-model="group"
-            active-class="deep-purple--text text--accent-4"
+            active-class="deep-black--text text--accent-7"
+            class="menu mt-8"
           >
             <v-list-item>
-                <RouterLink to="/">Home</RouterLink>
+              <RouterLink to="/"><h3>Home</h3></RouterLink>
             </v-list-item>
 
             <v-list-item>
@@ -48,28 +46,53 @@
             </v-list-item>
           </v-list-item-group>
         </v-list>
-      </v-navigation-drawer>
+      </v-card>
+    </v-navigation-drawer>
 
     <v-main>
-      <router-view/>
+      <router-view />
     </v-main>
   </v-app>
 </template>
+
+<style>
+.menu-drawer {
+  height: 100%;
+}
+
+.menu-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  align-items: center;
+}
+
+.menu {
+  justify-content: center;
+}
+
+.v-list-item a:not(.v-list-item__action) {
+  text-decoration: none;
+  color: black;
+}
+
+</style>
 
 <script>
 import { RouterLink } from 'vue-router';
 
 export default {
-    name: "App",
-    data: () => ({
-        drawer: false,
-        group: null,
-    }),
-    watch: {
-        group() {
-            this.drawer = false;
-        },
+  name: "App",
+  data: () => ({
+    drawer: false,
+    group: null,
+  }),
+  watch: {
+    group() {
+      this.drawer = false;
     },
-    components: { RouterLink }
+  },
+  components: { RouterLink },
 };
 </script>
